@@ -35,6 +35,7 @@ public class HomeController {
 		
 		System.out.println("hi");
 		System.out.println("bye");
+		System.out.println("ㅗㅑ1");
 		
 		return "home";
 	}
