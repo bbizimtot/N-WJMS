@@ -35,10 +35,20 @@ public class HomeController {
 		
 		System.out.println("hi");
 		System.out.println("bye");
-		System.out.println("ㅗㅑ1");
+		System.out.println("한글 테스트");
 		System.out.println("dd");
 		
 		return "home";
+	}
+	
+	@RequestMapping(value = "/empInfo")
+	public String emp_info(Locale locale) {
+		return "manager_empInfo";
+	}
+	
+	@RequestMapping(value = "/rstrntInfo")
+	public String rstrnt_Info(Locale locale) {
+		return "manager_rstrntInfo";
 	}
 	
 }

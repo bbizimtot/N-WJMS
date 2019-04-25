@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+h1 {
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: 0;
+	background-color: #bbbbbb;
+	height: 50px;
+	font-size: 40px;
+}
