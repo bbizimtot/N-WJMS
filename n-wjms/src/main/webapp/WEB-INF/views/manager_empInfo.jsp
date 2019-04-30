@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
+<!-- JSTL Core -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!-- JSTL SQL -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+
 <!DOCTYPE html>
 <html>
 
@@ -66,6 +71,7 @@
                 </div>
             </div>
             <table class="table table-striped">
+            
                 <thead>
                     <tr>
                         <th style="width: 20%;">직원 ID</th>
@@ -77,73 +83,26 @@
                         <th style="width: 10%;">설정</th>
                     </tr>
                 </thead>
+                
                 <tbody>
-                    <tr>
-                        <td>kwj426</td>
-                        <td>강 우정</td>
-                        <td>남자</td>
-                        <td>27</td>
-                        <td>0</td>
-                       	<td>F</td>
-                        <td>
-                            <a href='#' class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>bbizimtot</td>
-                        <td>최 준혁</td>
-                        <td>남자</td>
-                        <td>27</td>
-                        <td>36</td>
-                        <td>F</td>
-                        <td>
-                        	<a href='#' class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>kwj426</td>
-                        <td>강 우정</td>
-                        <td>남자</td>
-                        <td>27</td>
-                        <td>0</td>
-                       	<td>F</td>
-                        <td>
-                        	<a href='#' class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>bbizimtot</td>
-                        <td>최 준혁</td>
-                        <td>남자</td>
-                        <td>27</td>
-                        <td>36</td>
-                        <td>F</td>
-                        <td>
-                        	<a href='#' class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>kwj426</td>
-                        <td>강 우정</td>
-                        <td>남자</td>
-                        <td>27</td>
-                        <td>0</td>
-                       	<td>F</td>
-                        <td>
-                        	<a href='#' class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>
+                    <c:forEach var="item" items="${list}">
+						<tr>
+						<!-- EL 표기 -->
+							<td><c:out value="${item.emp_id}"/></td>
+							<td><c:out value="${item.emp_nm}"/></td>
+							<td><c:out value="${item.sex}"/></td>
+							<td><c:out value="${item.age}"/></td>
+							<td><c:out value="${item.meal_cnt}"/></td>
+							<td><c:out value="${item.ngtwr_at}"/></td>
+							<td>
+	                            <a href='#' class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+	                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+	                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+	                        </td>
+						</tr>
+					</c:forEach>
                 </tbody>
+                
             </table>
         </div>
     </div>

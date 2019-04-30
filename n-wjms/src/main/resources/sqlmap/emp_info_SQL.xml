@@ -1,15 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?> 
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  <!-- 맵핑될 DAO 인터페이스의 Full name 을 줍니다. -->
-<mapper namespace="com.nds.nwjms.dao.Admin_infoDAO"> 
+<mapper namespace="com.nds.nwjms.dao.Emp_infoDAO"> 
 <!-- id 속성은 DAO 의 메소드와 같아야 한다. 여기의 boardVO 는 mybatis-confg.xml 에 Alias 되어 있습니다. -->
 <!-- <![CDATA[     ]]> 태그를 활용하면 sql 작성시 부등호를 사용할 수 있게 된다.  -->
-	<select id="selectAdmin_infoList" resultType="admin_infoVO">
+	<select id="selectEmp_infoList" resultType="emp_infoVO">
 		<![CDATA[
-			SELECT ADMIN_ID
-				 , ADMIN_PW
-			FROM ADMIN_INFO
-			ORDER BY ADMIN_ID DESC
+			SELECT EMP_ID, EMP_NM, SEX, AGE, MEAL_CNT, NGTWR_AT
+			FROM EMP_INFO
+			ORDER BY EMP_NM		
 		]]>
 	</select>
 </mapper>

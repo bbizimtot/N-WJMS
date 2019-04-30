@@ -4,6 +4,7 @@
 
 	<typeAliases>
 		<typeAlias alias="admin_infoVO" type="com.nds.nwjms.vo.Admin_infoVO" />
+		<typeAlias alias="emp_infoVO" type="com.nds.nwjms.vo.Emp_infoVO" />
 	</typeAliases>
 
 </configuration>
