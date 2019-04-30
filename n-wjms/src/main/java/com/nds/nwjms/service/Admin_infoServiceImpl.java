@@ -1,4 +1,4 @@
-package com.nds.nwjms.service.impl;
+package com.nds.nwjms.service;
 
 import java.util.List;
 
