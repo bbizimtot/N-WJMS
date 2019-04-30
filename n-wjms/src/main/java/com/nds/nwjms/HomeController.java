@@ -16,8 +16,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.nds.nwjms.service.Admin_infoService;
 import com.nds.nwjms.service.Emp_infoService;
+import com.nds.nwjms.service.Rstrnt_infoService;
 import com.nds.nwjms.vo.Admin_infoVO;
 import com.nds.nwjms.vo.Emp_infoVO;
+import com.nds.nwjms.vo.Rstrnt_infoVO;
 
 /**
  * Handles requests for the application home page.
@@ -55,6 +57,16 @@ public class HomeController {
 		return "manager_empInfo";
 	}
 	
+	@Resource(name="rstrnt_infoService")
+	private Rstrnt_infoService rstrnt_infoSerivce;
+	
+	@RequestMapping(value = "/rstrntInfo")
+	public String rstrnt_Info(Locale locale, Model model) throws Exception {
+		List<Rstrnt_infoVO> list = rstrnt_infoSerivce.selectRstrnt_infoList();
+		model.addAttribute("list", list);
+		return "manager_rstrntInfo";
+	}
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
@@ -77,9 +89,5 @@ public class HomeController {
 	}
 	
 	
-	@RequestMapping(value = "/rstrntInfo")
-	public String rstrnt_Info(Locale locale) {
-		return "manager_rstrntInfo";
-	}
 	
 }

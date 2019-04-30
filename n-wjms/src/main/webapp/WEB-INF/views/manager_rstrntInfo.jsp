@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
+<!-- JSTL Core -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!-- JSTL SQL -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
+    
 <!DOCTYPE html>
 <html>
 
@@ -79,71 +84,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>HyukSinBabJib</td>
-                        <td>혁신밥집</td>
-                        <td>강원 원주시 혁신로 35</td>
-                        <td>매주 일요일</td>
-                        <td>09:00 - 20:00</td>
-                        <td>True</td>
-                        <td>
-                        	<a href='#' class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>OurTownKooksuJib</td>
-                        <td>우리동네국수집</td>
-                        <td>강원 원주시 혁신로 39-2 103호 </td>
-                        <td>없음</td>
-                        <td>11:00 - 22:00</td>
-                        <td>True</td>
-                        <td>
-                        	<a href='#' class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>DragonNoddle</td>
-                        <td>용우동</td>
-                        <td>강원 원주시 혁신로 53</td>
-                        <td>없음</td>
-                        <td>09:30 - 21:00</td>
-                        <td>True</td>
-                        <td>
-                        	<a href='#' class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>DragonNoddle</td>
-                        <td>용우동</td>
-                        <td>강원 원주시 혁신로 53</td>
-                        <td>없음</td>
-                        <td>09:30 - 21:00</td>
-                        <td>True</td>
-                        <td>
-                        	<a href='#' class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>DragonNoddle</td>
-                        <td>용우동</td>
-                        <td>강원 원주시 혁신로 53</td>
-                        <td>없음</td>
-                        <td>09:30 - 21:00</td>
-                        <td>True</td>
-                        <td>
-                        	<a href='#' class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
-                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
-                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
-                        </td>
-                    </tr>
+                    
+                    <c:forEach var="item" items="${list}">
+						<tr>
+						<!-- EL 표기 -->
+							<td><c:out value="${item.rstrnt_id}"/></td>
+							<td><c:out value="${item.rstrnt_nm}"/></td>
+							<td><c:out value="${item.rstrnt_lc}"/></td>
+							<td><c:out value="${item.rstrnt_restde}"/></td>
+							<td><c:out value="${item.opening_hours}"/></td>
+							<td><c:out value="${item.sys_usable}"/></td>
+							<td>
+	                            <a href='#' class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+	                            <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+	                            <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+	                        </td>
+						</tr>
+					</c:forEach>
+                   
                 </tbody>
             </table>
         </div>
