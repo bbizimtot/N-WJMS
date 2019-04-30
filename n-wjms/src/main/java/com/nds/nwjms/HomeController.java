@@ -58,6 +58,7 @@ public class HomeController {
 		System.out.println("한글 테스트");
 		System.out.println("dd");
 		System.out.println("dfd");
+		System.out.println("hi2");
 		
 		return "home";
 	}
