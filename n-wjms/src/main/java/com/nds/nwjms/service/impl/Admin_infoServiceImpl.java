@@ -23,5 +23,6 @@ public class Admin_infoServiceImpl implements Admin_infoService{
 	@Transactional
 	public List<Admin_infoVO> selectAdmin_infoList() throws Exception{
 		return admin_infoMapper.selectAdmin_infoList();
+		
 	}
 }

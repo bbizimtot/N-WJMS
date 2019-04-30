@@ -1,13 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<!-- JSTL 추가 -->
+<!-- JSTL Core -->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-<%-- 
-	<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
---%>
-
+<!-- JSTL SQL -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <%@ page session="false"%>
 <!DOCTYPE html>
 <html>
@@ -27,8 +24,9 @@
 		<tbody>
 			<c:forEach var="item" items="${list}">
 				<tr>
-					<td>${item.admin_id}</td>
-					<td>${item.admin_pw}</td>
+				<!-- EL 표기 -->
+					<td><c:out value="${item.admin_id}"/></td>
+					<td><c:out value="${item.admin_pw}"/></td>
 				</tr>
 			</c:forEach>
 		</tbody>

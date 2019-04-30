@@ -4,17 +4,25 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
 	<!-- The definition of the Root Spring Container shared by all Servlets and Filters -->
+	<!-- 모든 서블릿, 필터에서 공유하는 전역 파라미터 선언 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/spring/root-context.xml</param-value>
 	</context-param>
 	
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
+	
+	<!-- 1. Tomcat 실행시 ContextLoaderListener 실행 -->
+	<!-- 2. 부모 객체인 Context Loader 를 실행 -->
+	<!-- 3. Context Loader클래스에는 contextConfigLocation 이 선언되어 있어서 여기에 value 값으로 지정된 root-context.xml 을 참고해서 Root Application Conetext를 생성  -->
+	<!-- 4. web과 관련없는 bean을 생성 -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
 	<!-- Processes application requests -->
+	<!-- DispathcerServlet -->
+	<!-- 모든 request가 들어오면 이 서블릿으로 mapping 됨  -->
 	<servlet>
 		<servlet-name>appServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
