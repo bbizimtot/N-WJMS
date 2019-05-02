@@ -8,6 +8,7 @@ package com.nds.nwjms.vo;
 // 알아본 뒤에 추가하도록 하자.
 
 public class Admin_infoVO {
+	
 	private String admin_id;
 	private String admin_pw;
 	

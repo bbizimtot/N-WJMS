@@ -1,6 +1,7 @@
 package com.nds.nwjms.vo;
 
 public class Foodticket_dtlsVO {
+	
 	private String ticket_no;
 	private String emp_id;
 	private String rstrnt_id;
