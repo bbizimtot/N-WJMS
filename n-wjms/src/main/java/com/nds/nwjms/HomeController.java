@@ -91,6 +91,7 @@ public class HomeController {
 		System.out.println("dd");
 		System.out.println("dfd");
 		System.out.println("hi2");
+		System.out.println("bye");
 
 		return "loginform";
 	}
