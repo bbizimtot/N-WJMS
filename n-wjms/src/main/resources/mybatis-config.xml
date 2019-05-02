@@ -4,6 +4,8 @@
 
 	<typeAliases>
 		<typeAlias alias="admin_infoVO" type="com.nds.nwjms.vo.Admin_infoVO" />
+		<typeAlias alias="emp_infoVO" type="com.nds.nwjms.vo.Emp_infoVO" />
+		<typeAlias alias="rstrnt_infoVO" type="com.nds.nwjms.vo.Rstrnt_infoVO" />
 		<typeAlias alias="MemberVO" type="com.nds.nwjms.vo.MemberVO" />
 	</typeAliases>
 
