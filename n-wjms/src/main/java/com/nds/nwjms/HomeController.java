@@ -58,7 +58,7 @@ public class HomeController {
 	public String emp_info(Locale locale, Model model) throws Exception{
 		List<Emp_infoVO> list = emp_infoService.selectEmp_infoList();
 		model.addAttribute("list",list);
-		return "manager_empInfo";
+		return "admin_empInfo";
 	}
 	
 	@Resource(name="rstrnt_infoService")
@@ -68,7 +68,7 @@ public class HomeController {
 	public String rstrnt_Info(Locale locale, Model model) throws Exception {
 		List<Rstrnt_infoVO> list = rstrnt_infoSerivce.selectRstrnt_infoList();
 		model.addAttribute("list", list);
-		return "manager_rstrntInfo";
+		return "admin_rstrntInfo";
 	}
 
 	// 로그인 처리하는 부분
