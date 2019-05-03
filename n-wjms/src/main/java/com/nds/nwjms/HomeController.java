@@ -40,6 +40,10 @@ public class HomeController {
 	
 	@Resource(name ="admin_infoService") 
 	private Admin_infoService admin_infoService;
+	@Resource(name="emp_infoService")
+	private Emp_infoService emp_infoService;
+	@Resource(name="rstrnt_infoService")
+	private Rstrnt_infoService rstrnt_infoSerivce;
 	@Resource(name = "MemberService")
 	private MemberService memberService;
 
@@ -51,18 +55,12 @@ public class HomeController {
 		return "admin_infoList";
 	}
 	
-	@Resource(name="emp_infoService")
-	private Emp_infoService emp_infoService;
-	
 	@RequestMapping(value = "/empInfo")
 	public String emp_info(Locale locale, Model model) throws Exception{
 		List<Emp_infoVO> list = emp_infoService.selectEmp_infoList();
 		model.addAttribute("list",list);
 		return "admin_empInfo";
 	}
-	
-	@Resource(name="rstrnt_infoService")
-	private Rstrnt_infoService rstrnt_infoSerivce;
 	
 	@RequestMapping(value = "/rstrntInfo")
 	public String rstrnt_Info(Locale locale, Model model) throws Exception {
