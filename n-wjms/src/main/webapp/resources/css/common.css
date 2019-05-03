@@ -1,0 +1,54 @@
+body {
+	margin: 0;
+	font-family: 'Jua', sans-serif;
+}
+.headline > a {
+	text-decoration: none;
+	text-shadow: none;
+	font-size: 1.2em;
+	color: white;
+}
+.headline > a:visited {
+	text-decoration: none;
+	text-shadow: none;
+	font-size: 1.2em;
+	color: white;
+}
+#headbackground {
+	background-color: rgb(229,50,44);
+	border-top-color: rgb(229,50,44);
+}
+#activebtn {
+	background-color: rgb(229,50,44);
+	border-color: #ddd;
+	text-shadow: none;
+}
+div:not(#activebtn) {}
+#menubtn {
+	margin-top: 5px;
+	margin-left: 5px;
+	background-color: rgb(229,50,44);
+	border-color : rgb(229,50,44);
+	height: 15px;
+	font-size: 10px;
+	padding: 5px;
+	padding-left: 7px;
+	padding-bottom: 10px;
+}
+.menuimg {
+	width: 20px;
+	height: 20px;
+}
+.inner {
+	padding: 5px 0 30px 15px
+}
+.logo {
+	float: left;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+.add {
+	vertical-align: middle;
+	line-height: 18px;
+	font-size: 12px
+}

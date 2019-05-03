@@ -1,0 +1,64 @@
+#left {
+	padding: 0px;
+	margin: 0px;
+}
+
+.emp_name {
+	text-align: left;
+	border: 1px solid gold;
+	float: left;
+	width: 70%;
+	font-size: 26px;
+	color: blue;
+}
+
+.night_work {
+	text-align: right;
+	border: 1px solid red;
+	float: left;
+	width: 25%;
+	color: purple;
+}
+
+.leftpanel_menu {
+	margin-top: 20%;
+	position: relative;
+	border: 1px solid green;
+}
+
+.leftpanel_menu ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	padding: 0px;
+}
+
+.leftpanel_menu ul li {
+	margin: 0;
+	height: 20px;
+	padding: 10px;
+	padding-top: 17px;
+	text-shadow: none;
+}
+
+.leftpanel_menu ul li:hover {
+	margin: 0;
+	background-color: black;
+}
+
+.leftpanel_menu a {
+	display: block;
+	text-decoration: none;
+	color: grey;
+}
+
+.leftpanel_menu a:hover {
+	display: block;
+	text-decoration: none;
+	color: white;
+}
+.leftpanel_menu a:visited {
+	display: block;
+	text-decoration: none;
+	color: grey;
+}
