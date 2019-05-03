@@ -1,0 +1,58 @@
+.main {
+	padding: 0px;
+}
+
+.rank_container {
+	text-align: center;
+	font-size: 30px;
+	margin-bottom: 15px;
+}
+
+.rank {
+	display: inline-block;
+	padding: 0px;
+	width: 80%;
+	height: auto;
+	border: 1px solid black;
+	font-size: 5px;
+}
+
+.rank ul {
+	list-style: none;
+	margin-left: -20px;
+}
+
+.rank li {
+	border: 1px solid red;
+	overflow: hidden;
+	display: block;
+	height: 50px;
+	margin: 10px;
+}
+
+.rank a {
+	color: black;
+}
+
+.rank a:visited {
+	color: black;
+}
+
+.rank a:hover {
+	color: black;
+}
+
+.rank_img {
+	float: left;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+.rank_cont {
+	margin-top: 10px;
+	margin-left: 10px;
+	color: black;
+	text-decoration: none;
+	vertical-align: middle;
+	font-size: 20px
+}
