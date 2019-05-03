@@ -21,7 +21,7 @@ import com.nds.nwjms.vo.MemberVO;
 @RequestMapping("emp")
 public class EmpController {
 
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
   
 	/**
 	 * Simply selects the home view to render by returning its name.

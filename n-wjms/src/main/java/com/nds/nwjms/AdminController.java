@@ -25,9 +25,9 @@ import com.nds.nwjms.vo.Rstrnt_infoVO;
 
 @Controller
 @RequestMapping("admin")
-public class HomeController {
+public class AdminController {
 
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
   
 	/**
 	 * Simply selects the home view to render by returning its name.

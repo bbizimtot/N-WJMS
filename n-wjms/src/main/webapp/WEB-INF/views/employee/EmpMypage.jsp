@@ -18,13 +18,13 @@
 	src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <!-- /모바일 jquery mobile -->
 <!-- css -->
-<link rel="stylesheet" href="resources/css/common.css" type="text/css"
+<link rel="stylesheet" href="../resources/css/common.css" type="text/css"
 	media="screen" />
-<link rel="stylesheet" href="resources/css/employee.css" type="text/css"
+<link rel="stylesheet" href="../resources/css/employee.css" type="text/css"
 	media="screen" />
-<link rel="stylesheet" href="resources/css/empleftpanel.css"
+<link rel="stylesheet" href="../resources/css/empleftpanel.css"
 	type="text/css" media="screen" />
-<link rel="stylesheet" href="resources/css/map.css" type="text/css"
+<link rel="stylesheet" href="../resources/css/map.css" type="text/css"
 	media="screen" />
 <!-- /css -->
 </head>
@@ -39,7 +39,7 @@
 		<div data-role="header" id="headbackground">
 			<a id="menubtn" href="#lefte-1" data-ajax="false" class="ui-btn-left"
 				data-iconpos="left" data-inline="true"><img class="menuimg"
-				src="resources/images/menu.png" alt="menu(icon)" /></a>
+				src="../resources/images/menu.png" alt="menu(icon)" /></a>
 			<!-- /제목 -->
 			<%@ include file="../common/Title.jsp"%>
 			<!-- 제목 -->
@@ -55,7 +55,7 @@
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fb85c2ff4a4c7202d78fd98195a6b76d&libraries=services"></script>
 	<!-- 맵 load -->
 	<!-- 맵 js -->
-	<script type="text/javascript" src="resources/script/map.js"></script>
+	<script type="text/javascript" src="../resources/script/map.js"></script>
 	<!-- /맵 js -->
 </body>
 </html>
