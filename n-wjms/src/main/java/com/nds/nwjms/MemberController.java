@@ -2,7 +2,6 @@ package com.nds.nwjms;
 
 import java.text.DateFormat;
 import java.util.Date;
-import java.util.List;
 import java.util.Locale;
 
 import javax.annotation.Resource;
@@ -15,13 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.nds.nwjms.service.Admin_infoService;
-import com.nds.nwjms.service.Emp_infoService;
-import com.nds.nwjms.service.Rstrnt_infoService;
 import com.nds.nwjms.service.MemberService;
-import com.nds.nwjms.vo.Admin_infoVO;
-import com.nds.nwjms.vo.Emp_infoVO;
-import com.nds.nwjms.vo.Rstrnt_infoVO;
 import com.nds.nwjms.vo.MemberVO;
 
 
@@ -30,44 +23,16 @@ import com.nds.nwjms.vo.MemberVO;
  */
 
 @Controller
-public class HomeController {
+public class MemberController {
 
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(AdminController.class);
   
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
 	
-	@Resource(name ="admin_infoService") 
-	private Admin_infoService admin_infoService;
-	@Resource(name="emp_infoService")
-	private Emp_infoService emp_infoService;
-	@Resource(name="rstrnt_infoService")
-	private Rstrnt_infoService rstrnt_infoSerivce;
 	@Resource(name = "MemberService")
 	private MemberService memberService;
-
-	@RequestMapping(value = "/admin_infoList.do")
-	public String admin_infoList(Locale locale, Model model) throws Exception {
-		List<Admin_infoVO> list = admin_infoService.selectAdmin_infoList();
-		// logger.info(list.toString());
-		model.addAttribute("list", list);
-		return "admin_infoList";
-	}
-	
-	@RequestMapping(value = "/empInfo")
-	public String emp_info(Locale locale, Model model) throws Exception{
-		List<Emp_infoVO> list = emp_infoService.selectEmp_infoList();
-		model.addAttribute("list",list);
-		return "admin_empInfo";
-	}
-	
-	@RequestMapping(value = "/rstrntInfo")
-	public String rstrnt_Info(Locale locale, Model model) throws Exception {
-		List<Rstrnt_infoVO> list = rstrnt_infoSerivce.selectRstrnt_infoList();
-		model.addAttribute("list", list);
-		return "admin_rstrntInfo";
-	}
 
 	// 로그인 처리하는 부분
 	@RequestMapping(value = "/loginProcess", method = RequestMethod.POST)
@@ -83,27 +48,14 @@ public class HomeController {
 		
 		if (mvo != null) { // 로그인 성공
 			session.setAttribute("login", mvo); // 세션에 login인이란 이름으로 UserVO 객체를 저장해 놈.
-			returnURL = "redirect:/empmain"; // 로그인 성공시 게시글 목록페이지로 바로 이동하도록 하고
+			returnURL = "redirect:/emp/empmain"; // 로그인 성공시 게시글 목록페이지로 바로 이동하도록 하고
 		} else { // 로그인에 실패한 경우
-			returnURL = "redirect:/login"; // 로그인 폼으로 다시 가도록 함
+			returnURL = "redirect:/"; // 로그인 폼으로 다시 가도록 함
 		}
 
 		return returnURL; // 위에서 설정한 returnURL 을 반환해서 이동시킴
 	}
-
-	// 로그인 폼을 띄우는 부분
-	@RequestMapping(value = "/empmain", method = RequestMethod.GET)
-	public String empmain() {
-		return "employee/EmpMain"; // /login/loginForm.jsp를 띄움.
-	}// end of loginForm
 	
-//	// 로그인 폼을 띄우는 부분
-//	@RequestMapping(value = "/login", method = RequestMethod.GET)
-//	public String loginForm() {
-//		return "loginform"; // /login/loginForm.jsp를 띄움.
-//	}// end of loginForm
-
-
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
