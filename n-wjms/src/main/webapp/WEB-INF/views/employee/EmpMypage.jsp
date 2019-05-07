@@ -45,7 +45,7 @@
 			<!-- 제목 -->
 		</div>
 		<!-- /헤더 -->
-		<div data-role="main" class="ui-content main">마이페이지입니다.</div>
+		<div data-role="main" class="ui-content main">${sessionScope.login.member_id} 마이페이지입니다.</div>
 		<!-- footer -->
 		<%@ include file="../common/IncludeBottom.jsp"%>
 		<!-- /footer -->

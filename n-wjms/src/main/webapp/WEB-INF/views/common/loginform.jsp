@@ -7,9 +7,16 @@
 	<title>Home</title>
 </head>
 <body>
+	
+	<script>
+		var session = "${sessionScope}";
+		if(session != null)
+			history.go(1);
+	</script>
+
 	<form id="frm" action="./loginProcess" method="post">
-		ID : <input type="text" id="user_id" name="mid">
-		PW : <input type="text" id="user_pw" name="mpw">
+		ID : <input type="text" id="member_id" name="member_id">
+		PW : <input type="text" id="member_pw" name="member_pw">
 		<input type="submit" id="login_btn" value="로그인">
 	</form>
 </body>

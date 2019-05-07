@@ -49,7 +49,7 @@
 
 			<div id="map" style="width: 100%; height: 350px;"></div>
 			<div class="rank_container">
-				<p>랭킹</p>
+				<p>랭킹${sessionScope.login.member_id}</p>
 				<div class="rank">
 					<ul>
 						 <li>
@@ -92,8 +92,6 @@
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fb85c2ff4a4c7202d78fd98195a6b76d&libraries=services"></script>
 	<!-- 맵 load -->
-	<!-- 맵 js -->
-	<script type="text/javascript" src="../resources/script/map.js"></script>
-	<!-- /맵 js -->
+	<%@ include file="../../../resources/script/map.jsp"%>
 </body>
 </html>
