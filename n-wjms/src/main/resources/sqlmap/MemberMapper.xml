@@ -4,6 +4,8 @@
 <mapper namespace="com.nds.nwjms.dao.MemberDAO"> 
 <!-- id 속성은 DAO 의 메소드와 같아야 한다. 여기의 boardVO 는 mybatis-confg.xml 에 Alias 되어 있습니다. -->
 	<select id="memberlogin" resultType="MemberVO">
-		select * from member where mid = #{mid} and mpw = #{mpw}
+		<![CDATA[
+			select * from members where member_id = #{member_id} and member_pw = #{member_pw}
+		]]>	
 	</select>
 </mapper>

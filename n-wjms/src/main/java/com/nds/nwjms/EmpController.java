@@ -23,6 +23,12 @@ public class EmpController {
 
 	@RequestMapping(value = "/empmain", method = RequestMethod.GET)
 	public String empmain() {
+		System.out.println("##################################");
 		return "employee/EmpMain";
+	}
+	
+	@RequestMapping(value = "/empmypage", method = RequestMethod.GET)
+	public String empmypage() {
+		return "employee/EmpMypage";
 	}
 }

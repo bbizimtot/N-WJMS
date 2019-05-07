@@ -1,3 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!-- 맵 load -->
+	<script type="text/javascript"
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fb85c2ff4a4c7202d78fd98195a6b76d&libraries=services"></script>
+	<!-- 맵 load -->
+<script>
 setTimeout(function() {
             var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
             mapOption = {
@@ -10,7 +17,7 @@ setTimeout(function() {
         var geocoder = new daum.maps.services.Geocoder();
 
         var selectOverlay = null;
-
+        
         var res_addr = new Array('강원 원주시 혁신로 39-2 1층 103호', '강원 원주시 혁신로 53', '강원 원주시 혁신로 35 1층 107호');
         var res_content = new Array('<div class="wrap">' +
             '    <div class="info">' +
@@ -42,7 +49,7 @@ setTimeout(function() {
             '                <img src="http://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70">' +
             '           </div>' +
             '            <div class="desc">' +
-            '                <div class="ellipsis">강원 원주시 혁신로 53</div>' +
+            '                <div class="ellipsis">강원 원주시 혁신로 53${sessionScope.login.member_id}</div>' +
             '                <div class="jibun ellipsis">강원 원주시 혁신로 53</div>' +
             '                <div><a href="#emp_resinfo" data-transition="slide" class="link">홈페이지</a></div>' +
             '            </div>' +
@@ -109,3 +116,4 @@ var customOverlay = new daum.maps.CustomOverlay({
 function closeOverlay() {
     customOverlay.setMap(null);
 }
+</script>
