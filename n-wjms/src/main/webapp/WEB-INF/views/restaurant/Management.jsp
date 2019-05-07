@@ -11,7 +11,7 @@
 	<div data-role="header" id="headbackground">
 		<a id="menubtn" href="#left1" data-ajax="false" class="ui-btn-left"
 			data-iconpos="left" data-inline="true"><img class="menuimg"
-			src="resources/images/menu.png" alt="menu(icon)" /></a>
+			src="../resources/images/menu.png" alt="menu(icon)" /></a>
 		<!-- /제목 -->
 		<%@ include file="../common/Title.jsp"%>
 		<!-- 제목 -->

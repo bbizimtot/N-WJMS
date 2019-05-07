@@ -6,9 +6,18 @@
 <!-- <![CDATA[     ]]> 태그를 활용하면 sql 작성시 부등호를 사용할 수 있게 된다.  -->
 	<select id="selectRstrnt_infoList" resultType="rstrnt_infoVO">
 		<![CDATA[
-			SELECT RSTRNT_ID, RSTRNT_NM, RSTRNT_LC, RSTRNT_RESTDE, OPENING_HOURS, SYS_USABLE
-			FROM RSTRNT_INFO
-			ORDER BY RSTRNT_NM 
+			select r.rstrnt_id
+			, m.member_pw rstrnt_pw
+			, m.member_nm rstrnt_nm
+			, r.sys_usable, r.rstrnt_lc
+			, r.opening_hours
+			, r.break_time
+			, r.rstrnt_restde
+			, r.rstrnt_img
+			from members m
+			join rstrnt_info r
+			on
+			m.member_id = r.rstrnt_id
 		]]>
 	</select>
 </mapper>

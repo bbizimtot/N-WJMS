@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!-- 맵 load -->
-	<script type="text/javascript"
-		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fb85c2ff4a4c7202d78fd98195a6b76d&libraries=services"></script>
-	<!-- 맵 load -->
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fb85c2ff4a4c7202d78fd98195a6b76d&libraries=services"></script>
+<!-- 맵 load -->
 <script>
 setTimeout(function() {
             var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
@@ -17,69 +17,38 @@ setTimeout(function() {
         var geocoder = new daum.maps.services.Geocoder();
 
         var selectOverlay = null;
-        
-        var res_addr = new Array('강원 원주시 혁신로 39-2 1층 103호', '강원 원주시 혁신로 53', '강원 원주시 혁신로 35 1층 107호');
-        var res_content = new Array('<div class="wrap">' +
-            '    <div class="info">' +
-            '        <div class="title">' +
-            '            우리동네국수집' +
-            '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' +
-            '        </div>' +
-            '        <div class="body">' +
-            '            <div class="img">' +
-            '                <img src="http://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70">' +
-            '           </div>' +
-            '            <div class="desc">' +
-            '                <div class="ellipsis">강원 원주시 혁신로 39-2 1층 103호</div>' +
-            '                <div class="jibun ellipsis">강원 원주시 혁신로 39-2 1층 103호</div>' +
-            '                <div><a href="#emp_resinfo" data-transition="slide" class="link">홈페이지</a></div>' +
-            '            </div>' +
-            '        </div>' +
-            '    </div>' +
-            '</div>',
+        var res_list = JSON.parse('${list}');
+        //console.log(res_addr);
+		var res_content = new Array();
+		for(var i = 0; i < res_list.length; ++i) {
+			res_content.push(
+					'<div class="wrap">' +
+		            '    <div class="info">' +
+		            '        <div class="title">' +
+		            res_list[i].rstrnt_nm +
+		            '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' +
+		            '        </div>' +
+		            '        <div class="body">' +
+		            '            <div class="img">' +
+		            '                <img src="http://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70">' +
+		            '           </div>' +
+		            '            <div class="desc">' +
+		            '                <div class="ellipsis">' + res_list[i].rstrnt_lc + '</div>' +
+		            '                <div class="jibun ellipsis">' + res_list[i].rstrnt_lc + '</div>' +
+		            '                <div><a href="#emp_resinfo" data-transition="slide" class="link">홈페이지</a></div>' +
+		            '            </div>' +
+		            '        </div>' +
+		            '    </div>' +
+		            '</div>'
+			);
+		}
+		
+		console.log(res_content.length);
 
-            '<div class="wrap">' +
-            '    <div class="info">' +
-            '        <div class="title">' +
-            '            용우동' +
-            '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' +
-            '        </div>' +
-            '        <div class="body">' +
-            '            <div class="img">' +
-            '                <img src="http://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70">' +
-            '           </div>' +
-            '            <div class="desc">' +
-            '                <div class="ellipsis">강원 원주시 혁신로 53${sessionScope.login.member_id}</div>' +
-            '                <div class="jibun ellipsis">강원 원주시 혁신로 53</div>' +
-            '                <div><a href="#emp_resinfo" data-transition="slide" class="link">홈페이지</a></div>' +
-            '            </div>' +
-            '        </div>' +
-            '    </div>' +
-            '</div>',
-
-            '<div class="wrap">' +
-            '    <div class="info">' +
-            '        <div class="title">' +
-            '            혁신밥집' +
-            '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' +
-            '        </div>' +
-            '        <div class="body">' +
-            '            <div class="img">' +
-            '                <img src="http://cfile181.uf.daum.net/image/250649365602043421936D" width="73" height="70">' +
-            '           </div>' +
-            '            <div class="desc">' +
-            '                <div class="ellipsis">강원 원주시 혁신로 35 1층 107호</div>' +
-            '                <div class="jibun ellipsis">강원 원주시 혁신로 35 1층 107호</div>' +
-            '                <div><a href="#emp_resinfo" data-transition="slide" class="link">홈페이지</a></div>' +
-            '            </div>' +
-            '        </div>' +
-            '    </div>' +
-            '</div>');
-
-        for (var i = 0; i < res_addr.length; ++i) {
+        for (var i = 0; i < res_list.length; ++i) {
             (function(i) {
                 // 주소로 좌표를 검색합니다
-                geocoder.addressSearch(res_addr[i], function(result, status) {
+                geocoder.addressSearch(res_list[i].rstrnt_lc, function(result, status) {
                     // 정상적으로 검색이 완료됐으면 
                     if (status === daum.maps.services.Status.OK) {
 

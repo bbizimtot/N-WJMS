@@ -1,7 +1,5 @@
 package com.nds.nwjms;
 
-import java.text.DateFormat;
-import java.util.Date;
 import java.util.Locale;
 
 import javax.annotation.Resource;
@@ -52,7 +50,7 @@ public class MemberController {
 		if (mvo != null) { // 로그인 성공
 			session.setAttribute("login", mvo); // 세션에 login인이란 이름으로 MemverVO 객체를 저장해 놈.
 			if(mvo.getMember_type().equals("R"))
-				returnURL = "redirect:/emp/empmain";
+				returnURL = "redirect:/res/resmain";
 			else if(mvo.getMember_type().equals("E"))
 				returnURL = "redirect:/emp/empmain";
 			else

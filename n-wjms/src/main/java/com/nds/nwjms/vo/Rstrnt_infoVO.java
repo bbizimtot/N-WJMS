@@ -1,10 +1,11 @@
 package com.nds.nwjms.vo;
 
 public class Rstrnt_infoVO {
+	
 	private String rstrnt_id;
-	private String sys_usable;
 	private String rstrnt_pw;
 	private String rstrnt_nm;
+	private String sys_usable;
 	private String rstrnt_lc;
 	private String opening_hours;
 	private String break_time;
@@ -17,12 +18,6 @@ public class Rstrnt_infoVO {
 	public void setRstrnt_id(String rstrnt_id) {
 		this.rstrnt_id = rstrnt_id;
 	}
-	public String getSys_usable() {
-		return sys_usable;
-	}
-	public void setSys_usable(String sys_usable) {
-		this.sys_usable = sys_usable;
-	}
 	public String getRstrnt_pw() {
 		return rstrnt_pw;
 	}
@@ -34,6 +29,12 @@ public class Rstrnt_infoVO {
 	}
 	public void setRstrnt_nm(String rstrnt_nm) {
 		this.rstrnt_nm = rstrnt_nm;
+	}
+	public String getSys_usable() {
+		return sys_usable;
+	}
+	public void setSys_usable(String sys_usable) {
+		this.sys_usable = sys_usable;
 	}
 	public String getRstrnt_lc() {
 		return rstrnt_lc;
@@ -65,6 +66,4 @@ public class Rstrnt_infoVO {
 	public void setRstrnt_img(byte[] rstrnt_img) {
 		this.rstrnt_img = rstrnt_img;
 	}
-	
-	
 }

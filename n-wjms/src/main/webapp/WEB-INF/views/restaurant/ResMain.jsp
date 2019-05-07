@@ -22,16 +22,16 @@
 	src="https://www.gstatic.com/charts/loader.js"></script>
 <!-- /차트 load -->
 <!-- css -->
-<link rel="stylesheet" href="resources/css/common.css" type="text/css"
+<link rel="stylesheet" href="../resources/css/common.css" type="text/css"
 	media="screen" />
-<link rel="stylesheet" href="resources/css/restaurant.css" type="text/css"
+<link rel="stylesheet" href="../resources/css/restaurant.css" type="text/css"
 	media="screen" />
 <!-- /css -->
 <!-- 차트 js -->
-<script type="text/javascript" src="resources/script/piechart.js"></script>
-<script type="text/javascript" src="resources/script/linechart.js"></script>
-<script type="text/javascript" src="resources/script/barchart.js"></script>
-<script type="text/javascript" src="resources/script/chart2.js"></script>
+<script type="text/javascript" src="../resources/script/piechart.js"></script>
+<script type="text/javascript" src="../resources/script/linechart.js"></script>
+<script type="text/javascript" src="../resources/script/barchart.js"></script>
+<script type="text/javascript" src="../resources/script/chart2.js"></script>
 <!-- /차트 js -->
 </head>
 <body>
